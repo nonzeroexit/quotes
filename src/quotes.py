@@ -11,6 +11,7 @@ from components.get_args import get_args
 
 #TODO multiple authors support
 #TODO add "all" option in -b
+#TODO set quotes path as env var
 
 def main():
     os.chdir(SETTINGS['quotes_path'])
