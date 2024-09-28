@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import os
-from components.get_settings import SETTINGS
 from components.get_books import get_books
 from components.get_authors import get_authors
 from components.get_all_tags import get_tags
@@ -11,10 +10,12 @@ from components.get_args import get_args
 
 #TODO multiple authors support
 #TODO add "all" option in -b
-#TODO set quotes path as env var
+
+def get_quotes_path():
+    return os.environ(['quotes_path'])
 
 def main():
-    os.chdir(SETTINGS['quotes_path'])
+    os.chdir(get_quotes_path())
 
     args, parser = get_args()
     books = get_books()

@@ -8,16 +8,15 @@ if [ -d "/usr/local/bin/quotes_files" ]; then
     sudo rm -r "/usr/local/bin/quotes_files"
 fi
 
-if [ ! -d "$HOME/.config/quotes" ]; then
-    mkdir "$HOME/.config/quotes"
+if [ -z "$quotes_path" ];then
     while : ; do
-        echo -n "path to your quotes: "
+        echo -n "path to your quotes dir: "
         read pathToQuotes
         if [ -d "$pathToQuotes" ]; then
-            echo "quotes_path,$pathToQuotes" > $HOME/.config/quotes/settings.csv
+            echo "export quotes_path=$pathToQuotes" >> $HOME/.bashrc
             break
         else
-            echo "$pathToQuotes doesnt exists, try again."
+            echo "$pathToQuotes doesn't exists, try again."
         fi
     done
 fi
