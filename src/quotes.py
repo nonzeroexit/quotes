@@ -11,11 +11,8 @@ from components.get_args import get_args
 #TODO multiple authors support
 #TODO add "all" option in -b
 
-def get_quotes_path():
-    return os.environ(['quotes_path'])
-
 def main():
-    os.chdir(get_quotes_path())
+    os.chdir(os.environ.get('quotes_path'))
 
     args, parser = get_args()
     books = get_books()
