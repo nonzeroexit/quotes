@@ -34,15 +34,15 @@ Each year should have a different markdown file, with the YYYY.md format. The .m
 
 - Quote 1.
   Here you can write your quote.
-  You can use more than one line per quote, a new quote only begins with "\*"
+  You can use more than one line per quote, a new quote only begins with "*"
 - Quote 2. You can write as many quotes as you want.
 ```
 
 Book tags are optional.
-To mark a book as favorite, write an \* at the end of the title line.
+To mark a book as favorite, write an * at the end of the title line.
 
 ```markdown
-#Favorite Book Name/Book Author\*
+#Favorite Book Name/Book Author*
 ```
 
 ## Options
