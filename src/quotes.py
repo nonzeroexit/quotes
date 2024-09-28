@@ -35,7 +35,7 @@ def main():
         if quotes:
             print_quotes_markdown(quotes)
         else:
-            print('Quotes not found.')
+            print('No quotes found.')
 
     #! PRINT AUTHORS TABLE
     elif args.show_authors:
