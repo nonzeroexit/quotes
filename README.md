@@ -7,15 +7,15 @@ Manage your book quotes.
 
 ## Features
 
-- Manage your book quotes in a simple way
-- Search by book name, author, reading year, tag or favorites
-- Search a query through all the quotes in the database
-- Show a table with all the authors
-- Show a table with all the tags
+* Manage your book quotes in a simple way
+* Search by book name, author, reading year, tag or favorites
+* Search a query through all the quotes in the database
+* Show a table with all the authors
+* Show a table with all the tags
 
 ## Dependencies
 
-- [Rich](https://pypi.org/project/rich/)
+* [Rich](https://pypi.org/project/rich/)
 
 ## Installation
 
@@ -32,10 +32,10 @@ Each year should have a different markdown file, with the YYYY.md format. The .m
 #Book Name/Book Author
 [tag1,tag2,tag3,...,tagn]
 
-- Quote 1.
+* Quote 1.
   Here you can write your quote.
   You can use more than one line per quote, a new quote only begins with "*"
-- Quote 2. You can write as many quotes as you want.
+* Quote 2. You can write as many quotes as you want.
 ```
 
 Book tags are optional.
