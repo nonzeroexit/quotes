@@ -21,9 +21,17 @@ if [ -z "$quotes_path" ];then
     done
 fi
 
-wget http://github.com/nonzeroexit/quotes/archive/master.zip -O /tmp/quotes.zip
-unzip -o /tmp/quotes.zip -d /tmp
-sudo cp -r /tmp/quotes-main/src /usr/local/bin/quotes_files
-cd /usr/local/bin
-sudo ln -s /usr/local/bin/quotes_files/quotes.py quotes
-sudo chmod a+rx quotes
+if [ "$1" == "local" ];then
+    sudo cp -r src /usr/local/bin/quotes_files
+    cd /usr/local/bin
+    sudo ln -s /usr/local/bin/quotes_files/quotes.py quotes
+    sudo chmod a+rx quotes
+else
+    wget http://github.com/nonzeroexit/quotes/archive/master.zip -O /tmp/quotes.zip
+    unzip -o /tmp/quotes.zip -d /tmp
+    sudo cp -r /tmp/quotes-main/src /usr/local/bin/quotes_files
+    cd /usr/local/bin
+    sudo ln -s /usr/local/bin/quotes_files/quotes.py quotes
+    sudo chmod a+rx quotes
+fi
+bash
