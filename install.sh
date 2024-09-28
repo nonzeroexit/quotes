@@ -23,9 +23,8 @@ if [ ! -d "$HOME/.config/quotes" ]; then
 fi
 
 wget http://github.com/nonzeroexit/quotes/archive/master.zip -O /tmp/quotes.zip
-unzip /tmp/quotes.zip
+unzip /tmp/quotes.zip -d /tmp
 sudo cp -r /tmp/quotes-main/src /usr/local/bin/quotes_files
-# rm -r quotes-main quotes.zip
 cd /usr/local/bin
 sudo ln -s /usr/local/bin/quotes_files/quotes.py quotes
 sudo chmod a+rx quotes
