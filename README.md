@@ -20,7 +20,7 @@ Manage your book quotes.
 ## Installation
 
 ```bash
-curl -f https://raw.githubusercontent.com/nonzeroexit/quotes/main/install.sh | sh
+wget https://raw.githubusercontent.com/nonzeroexit/quotes/main/install.sh -P /tmp && bash /tmp/install.sh
 ```
 
 ## Usage
