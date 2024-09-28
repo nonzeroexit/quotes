@@ -9,7 +9,6 @@ from components.print_entries import print_books_table, print_book_quotes_markdo
 from components.get_args import get_args
 
 #TODO multiple authors support
-#TODO add "all" option in -b
 
 def main():
     os.chdir(os.environ.get('quotes_path'))
