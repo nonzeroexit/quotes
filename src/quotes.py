@@ -11,7 +11,7 @@ from components.get_args import get_args
 #TODO multiple authors support
 
 def main():
-    os.chdir(os.environ.get('quotes_path'))
+    os.chdir(os.environ.get('bookquotes'))
 
     args, parser = get_args()
     books = get_books()

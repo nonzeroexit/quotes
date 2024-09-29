@@ -13,7 +13,7 @@ if [ -z "$quotes_path" ];then
         echo -n "path to your quotes dir: "
         read pathToQuotes
         if [ -d "$pathToQuotes" ]; then
-            echo "export quotes_path=$pathToQuotes" >> $HOME/.bashrc
+            echo "export bookquotes=$pathToQuotes" >> $HOME/.bashrc
             break
         else
             echo "$pathToQuotes doesn't exists, try again."
