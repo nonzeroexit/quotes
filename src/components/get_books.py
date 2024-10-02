@@ -32,7 +32,6 @@ def get_book_name_author(line, file_name):
     except ValueError:
         print(f'Wrong format in book header -> {line.strip()} in {file_name}')
         print('The format should be book_name/author')
-        print('Correct format and run -makedb again')
         sys.exit(1)
     return book_name, author, is_favorite
 
