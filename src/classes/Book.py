@@ -10,4 +10,4 @@ class Book:
         self.tags = []
 
     def __repr__(self):
-        return f'{self.book_id} {self.book_name} {self. authors}'
+        return f'{self.book_id} {self.book_name} {self.str_authors}'
