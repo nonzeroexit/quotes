@@ -9,8 +9,6 @@ from components.filter_quotes import filter_quotes
 from components.print_entries import print_books_table, print_book_quotes_markdown, print_authors_table, print_tags_table, print_quotes_markdown
 from components.get_args import get_args
 
-#TODO multiple authors support
-
 def main():
     if not os.environ.get('bookquotes'):
         print('bookquotes env var not configured.')
