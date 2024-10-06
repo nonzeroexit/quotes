@@ -14,9 +14,8 @@ def read_md_file(md_file_name):
                 book_name, authors, is_favorite = get_book_name_authors(line, md_file_name)
                 books.append(Book(book_id, book_name, authors, year, is_favorite))
             elif line.startswith('[') and line.strip().endswith(']'): # tags
-                if len(line.strip()) == 2: # line is []
-                    continue
-                books[-1].tags = line.lower().strip('[]\n').split(',')
+                if len(line.strip()) != 2: # len(line) == 2 -> line is []
+                    books[-1].tags = [tag.strip() for tag in line.lower().strip('[]\n').split(',')]
             elif line.startswith('*'): # new quote starts
                 books[-1].quotes.append(line.lstrip('* '))
             else:
