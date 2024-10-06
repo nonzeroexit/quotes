@@ -13,8 +13,8 @@ def read_md_file(md_file_name):
             if line.startswith('#'):
                 book_number += 1
                 book_id = f'{year[-2:]}-{book_number}'
-                book_name, author, is_favorite = get_book_name_author(line, md_file_name)
-                books.append(Book(book_id, book_name, author, year, is_favorite))
+                book_name, authors, is_favorite = get_book_name_authors(line, md_file_name)
+                books.append(Book(book_id, book_name, authors, year, is_favorite))
             elif line.startswith('[') and line.strip().endswith(']'): # tags
                 if len(line.strip()) == 2: # line is []
                     continue
@@ -25,15 +25,16 @@ def read_md_file(md_file_name):
                 books[-1].quotes[-1] +=  '\n  ' + line # newline in markdown
     return books
 
-def get_book_name_author(line, file_name):
+def get_book_name_authors(line, file_name):
     is_favorite = line.strip().endswith('*')
     try:
-        book_name, author = line.strip('*#\n').split('/')
+        book_name, authors = line.strip('*#\n').split('/')
+        authors = [author.strip() for author in authors.split('&')]
     except ValueError:
         print(f'Wrong format in book header -> {line.strip()} in {file_name}')
-        print('The format should be book_name/author')
+        print('The format should be book_name/author1 & author2 & authorn')
         sys.exit(1)
-    return book_name, author, is_favorite
+    return book_name, authors, is_favorite
 
 def get_books():
     quotes_files = sorted([xfile for xfile in os.listdir(os.curdir) if xfile.endswith('.md')])
