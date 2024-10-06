@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import sys
 from components.get_books import get_books
 from components.get_authors import get_authors
 from components.get_all_tags import get_tags
@@ -11,6 +12,10 @@ from components.get_args import get_args
 #TODO multiple authors support
 
 def main():
+    if not os.environ.get('bookquotes'):
+        print('bookquotes env var not configured.')
+        sys.exit(1)
+
     os.chdir(os.environ.get('bookquotes'))
 
     args, parser = get_args()
