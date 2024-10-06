@@ -3,6 +3,18 @@ import sys
 from classes.Book import Book
 
 def read_md_file(md_file_name):
+
+    def get_book_name_authors(line, file_name):
+        is_favorite = line.strip().endswith('*')
+        try:
+            book_name, authors = line.strip('*#\n').split('/')
+            authors = [author.strip() for author in authors.split('&')]
+        except ValueError:
+            print(f'Wrong format in book header -> {line.strip()} in {file_name}')
+            print('The format should be book_name/author1 & author2 & authorn')
+            sys.exit(1)
+        return book_name, authors, is_favorite
+
     books = []
     year = md_file_name.split('.')[0] # md name: year.md
     with open(md_file_name, encoding="utf-8") as file_handle:
@@ -22,16 +34,6 @@ def read_md_file(md_file_name):
                 books[-1].quotes[-1] +=  '\n  ' + line # newline in markdown
     return books
 
-def get_book_name_authors(line, file_name):
-    is_favorite = line.strip().endswith('*')
-    try:
-        book_name, authors = line.strip('*#\n').split('/')
-        authors = [author.strip() for author in authors.split('&')]
-    except ValueError:
-        print(f'Wrong format in book header -> {line.strip()} in {file_name}')
-        print('The format should be book_name/author1 & author2 & authorn')
-        sys.exit(1)
-    return book_name, authors, is_favorite
 
 def get_books():
     quotes_files = sorted([xfile for xfile in os.listdir(os.curdir) if xfile.endswith('.md')])
