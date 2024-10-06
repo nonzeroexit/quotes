@@ -6,13 +6,11 @@ def read_md_file(md_file_name):
     books = []
     year = md_file_name.split('.')[0] # md name: year.md
     with open(md_file_name, encoding="utf-8") as file_handle:
-        book_number = 0
         for line in file_handle:
             if not line.strip():
                 continue
             if line.startswith('#'):
-                book_number += 1
-                book_id = f'{year[-2:]}-{book_number}'
+                book_id = f'{year[-2:]}-{len(books)+1}'
                 book_name, authors, is_favorite = get_book_name_authors(line, md_file_name)
                 books.append(Book(book_id, book_name, authors, year, is_favorite))
             elif line.startswith('[') and line.strip().endswith(']'): # tags
