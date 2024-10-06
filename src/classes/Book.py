@@ -3,6 +3,7 @@ class Book:
         self.book_id = book_id
         self.book_name = book_name
         self.authors = authors
+        self.str_authors = (' & ').join(self.authors)
         self.reading_year = reading_year
         self.is_favorite = is_favorite
         self.quotes = []
