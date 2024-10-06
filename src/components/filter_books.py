@@ -3,7 +3,7 @@ def hit(book, query):
         return True
     if query in book.book_name.casefold().split():
         return True
-    if query in book.author.casefold().split():
+    if query in book.str_authors.casefold().split():
         return True
     if query in book.tags:
         return True
