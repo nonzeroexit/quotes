@@ -34,7 +34,6 @@ def read_md_file(md_file_name):
                 books[-1].quotes[-1] +=  '\n  ' + line # newline in markdown
     return books
 
-
 def get_books():
     quotes_files = sorted([xfile for xfile in os.listdir(os.curdir) if xfile.endswith('.md')])
     books = []
