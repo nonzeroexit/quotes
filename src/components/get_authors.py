@@ -1,12 +1,9 @@
 from classes.Author import Author
 
 def get_authors(books):
-    authors = {}
+    authors = {author: Author(author) for author in set(author for book in books for author in book.authors) }
     for book in books:
         for author in book.authors:
-            if author not in authors:
-                authors[author] = Author(author)
-
             authors[author].books.append(book)
             authors[author].tags = list(set(authors[author].tags + book.tags))
 
