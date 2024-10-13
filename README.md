@@ -2,14 +2,14 @@
 
 Manage your book quotes.
 
-![books_table](./img/books_table.png)  
+![books_table](./img/books_table.png)
 ![books_quotes](./img/book_quotes.png)
 
 ## Features
 
 * Manage your book quotes in a simple way
 * Search by book name, author, reading year, tag or favorites
-* Search a query through all the quotes in the database
+* Search through all the quotes in the database
 * Show a table with all the authors
 * Show a table with all the tags
 
@@ -38,11 +38,17 @@ Each year should have a different markdown file, with the YYYY.md format. The .m
 * Quote 2. You can write as many quotes as you want.
 ```
 
-Book tags are optional.
+Book tags are optional.  
 To mark a book as favorite, write an * at the end of the title line.
 
 ```markdown
 #Favorite Book Name/Book Author*
+```
+
+If a book has multiple authors, use & to separate them.
+
+```markdown
+#Book Name/Author 1 & Author 2
 ```
 
 ## Options
